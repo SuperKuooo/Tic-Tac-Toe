@@ -1,0 +1,4 @@
+/Applications/CLion.app/Contents/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" "/Users/superkuo/CLionProjects/Tic Tac Toe"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/superkuo/CLionProjects/Tic Tac Toe/cmake-build-debug
