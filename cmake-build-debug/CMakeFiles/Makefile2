@@ -54,10 +54,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/superkuo/CLionProjects/Tic Tac Toe"
+CMAKE_SOURCE_DIR = /Users/superkuo/Documents/GitHub/Tic-Tac-Toe
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/superkuo/CLionProjects/Tic Tac Toe/cmake-build-debug"
+CMAKE_BINARY_DIR = /Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug
 
 #=============================================================================
 # Target rules for target CMakeFiles/Tic_Tac_Toe.dir
@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = "/Users/superkuo/CLionProjects/Tic Tac Toe/cmake-build-debug"
 CMakeFiles/Tic_Tac_Toe.dir/all:
 	$(MAKE) -f CMakeFiles/Tic_Tac_Toe.dir/build.make CMakeFiles/Tic_Tac_Toe.dir/depend
 	$(MAKE) -f CMakeFiles/Tic_Tac_Toe.dir/build.make CMakeFiles/Tic_Tac_Toe.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/superkuo/CLionProjects/Tic Tac Toe/cmake-build-debug/CMakeFiles" --progress-num=1,2,3 "Built target Tic_Tac_Toe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target Tic_Tac_Toe"
 .PHONY : CMakeFiles/Tic_Tac_Toe.dir/all
 
 # Include target in all.
@@ -76,9 +76,9 @@ all: CMakeFiles/Tic_Tac_Toe.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Tic_Tac_Toe.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/superkuo/CLionProjects/Tic Tac Toe/cmake-build-debug/CMakeFiles" 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Tic_Tac_Toe.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/superkuo/CLionProjects/Tic Tac Toe/cmake-build-debug/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/Tic_Tac_Toe.dir/rule
 
 # Convenience name for target.
