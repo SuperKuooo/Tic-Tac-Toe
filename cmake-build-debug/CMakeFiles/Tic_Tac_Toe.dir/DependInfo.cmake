@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/superkuo/CLionProjects/Tic Tac Toe/TTTFunctions.c" "/Users/superkuo/CLionProjects/Tic Tac Toe/cmake-build-debug/CMakeFiles/Tic_Tac_Toe.dir/TTTFunctions.c.o"
-  "/Users/superkuo/CLionProjects/Tic Tac Toe/main.c" "/Users/superkuo/CLionProjects/Tic Tac Toe/cmake-build-debug/CMakeFiles/Tic_Tac_Toe.dir/main.c.o"
+  "/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/TTTFunctions.c" "/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug/CMakeFiles/Tic_Tac_Toe.dir/TTTFunctions.c.o"
+  "/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/main.c" "/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug/CMakeFiles/Tic_Tac_Toe.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

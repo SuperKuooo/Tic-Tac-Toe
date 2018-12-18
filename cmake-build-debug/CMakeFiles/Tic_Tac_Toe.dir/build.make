@@ -43,10 +43,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/superkuo/CLionProjects/Tic Tac Toe"
+CMAKE_SOURCE_DIR = /Users/superkuo/Documents/GitHub/Tic-Tac-Toe
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/superkuo/CLionProjects/Tic Tac Toe/cmake-build-debug"
+CMAKE_BINARY_DIR = /Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Tic_Tac_Toe.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/Tic_Tac_Toe.dir/flags.make
 
 CMakeFiles/Tic_Tac_Toe.dir/main.c.o: CMakeFiles/Tic_Tac_Toe.dir/flags.make
 CMakeFiles/Tic_Tac_Toe.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/superkuo/CLionProjects/Tic Tac Toe/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Tic_Tac_Toe.dir/main.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Tic_Tac_Toe.dir/main.c.o   -c "/Users/superkuo/CLionProjects/Tic Tac Toe/main.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Tic_Tac_Toe.dir/main.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Tic_Tac_Toe.dir/main.c.o   -c /Users/superkuo/Documents/GitHub/Tic-Tac-Toe/main.c
 
 CMakeFiles/Tic_Tac_Toe.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Tic_Tac_Toe.dir/main.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/superkuo/CLionProjects/Tic Tac Toe/main.c" > CMakeFiles/Tic_Tac_Toe.dir/main.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/superkuo/Documents/GitHub/Tic-Tac-Toe/main.c > CMakeFiles/Tic_Tac_Toe.dir/main.c.i
 
 CMakeFiles/Tic_Tac_Toe.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Tic_Tac_Toe.dir/main.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/superkuo/CLionProjects/Tic Tac Toe/main.c" -o CMakeFiles/Tic_Tac_Toe.dir/main.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/superkuo/Documents/GitHub/Tic-Tac-Toe/main.c -o CMakeFiles/Tic_Tac_Toe.dir/main.c.s
 
 CMakeFiles/Tic_Tac_Toe.dir/main.c.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/Tic_Tac_Toe.dir/main.c.o.provides.build: CMakeFiles/Tic_Tac_Toe.dir/m
 
 CMakeFiles/Tic_Tac_Toe.dir/TTTFunctions.c.o: CMakeFiles/Tic_Tac_Toe.dir/flags.make
 CMakeFiles/Tic_Tac_Toe.dir/TTTFunctions.c.o: ../TTTFunctions.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/superkuo/CLionProjects/Tic Tac Toe/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Tic_Tac_Toe.dir/TTTFunctions.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Tic_Tac_Toe.dir/TTTFunctions.c.o   -c "/Users/superkuo/CLionProjects/Tic Tac Toe/TTTFunctions.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Tic_Tac_Toe.dir/TTTFunctions.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Tic_Tac_Toe.dir/TTTFunctions.c.o   -c /Users/superkuo/Documents/GitHub/Tic-Tac-Toe/TTTFunctions.c
 
 CMakeFiles/Tic_Tac_Toe.dir/TTTFunctions.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Tic_Tac_Toe.dir/TTTFunctions.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/superkuo/CLionProjects/Tic Tac Toe/TTTFunctions.c" > CMakeFiles/Tic_Tac_Toe.dir/TTTFunctions.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/superkuo/Documents/GitHub/Tic-Tac-Toe/TTTFunctions.c > CMakeFiles/Tic_Tac_Toe.dir/TTTFunctions.c.i
 
 CMakeFiles/Tic_Tac_Toe.dir/TTTFunctions.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Tic_Tac_Toe.dir/TTTFunctions.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/superkuo/CLionProjects/Tic Tac Toe/TTTFunctions.c" -o CMakeFiles/Tic_Tac_Toe.dir/TTTFunctions.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/superkuo/Documents/GitHub/Tic-Tac-Toe/TTTFunctions.c -o CMakeFiles/Tic_Tac_Toe.dir/TTTFunctions.c.s
 
 CMakeFiles/Tic_Tac_Toe.dir/TTTFunctions.c.o.requires:
 
@@ -117,7 +117,7 @@ Tic_Tac_Toe: CMakeFiles/Tic_Tac_Toe.dir/main.c.o
 Tic_Tac_Toe: CMakeFiles/Tic_Tac_Toe.dir/TTTFunctions.c.o
 Tic_Tac_Toe: CMakeFiles/Tic_Tac_Toe.dir/build.make
 Tic_Tac_Toe: CMakeFiles/Tic_Tac_Toe.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/superkuo/CLionProjects/Tic Tac Toe/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable Tic_Tac_Toe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable Tic_Tac_Toe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Tic_Tac_Toe.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -135,6 +135,6 @@ CMakeFiles/Tic_Tac_Toe.dir/clean:
 .PHONY : CMakeFiles/Tic_Tac_Toe.dir/clean
 
 CMakeFiles/Tic_Tac_Toe.dir/depend:
-	cd "/Users/superkuo/CLionProjects/Tic Tac Toe/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/superkuo/CLionProjects/Tic Tac Toe" "/Users/superkuo/CLionProjects/Tic Tac Toe" "/Users/superkuo/CLionProjects/Tic Tac Toe/cmake-build-debug" "/Users/superkuo/CLionProjects/Tic Tac Toe/cmake-build-debug" "/Users/superkuo/CLionProjects/Tic Tac Toe/cmake-build-debug/CMakeFiles/Tic_Tac_Toe.dir/DependInfo.cmake" --color=$(COLOR)
+	cd /Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/superkuo/Documents/GitHub/Tic-Tac-Toe /Users/superkuo/Documents/GitHub/Tic-Tac-Toe /Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug /Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug /Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug/CMakeFiles/Tic_Tac_Toe.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Tic_Tac_Toe.dir/depend
 

@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/superkuo/CLionProjects/Tic Tac Toe/cmake-build-debug"/>
+				<Option working_dir="/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/superkuo/CLionProjects/Tic\ Tac\ Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/superkuo/CLionProjects/Tic\ Tac\ Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/superkuo/CLionProjects/Tic\ Tac\ Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/superkuo/CLionProjects/Tic\ Tac\ Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/superkuo/CLionProjects/Tic Tac Toe/cmake-build-debug"/>
+				<Option working_dir="/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/superkuo/CLionProjects/Tic\ Tac\ Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/superkuo/CLionProjects/Tic\ Tac\ Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/superkuo/CLionProjects/Tic\ Tac\ Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/superkuo/CLionProjects/Tic\ Tac\ Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/superkuo/CLionProjects/Tic Tac Toe/cmake-build-debug"/>
+				<Option working_dir="/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/superkuo/CLionProjects/Tic\ Tac\ Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/superkuo/CLionProjects/Tic\ Tac\ Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/superkuo/CLionProjects/Tic\ Tac\ Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/superkuo/CLionProjects/Tic\ Tac\ Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Tic_Tac_Toe">
-				<Option output="/Users/superkuo/CLionProjects/Tic Tac Toe/cmake-build-debug/Tic_Tac_Toe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/superkuo/CLionProjects/Tic Tac Toe/cmake-build-debug"/>
+				<Option output="/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug/Tic_Tac_Toe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -51,15 +51,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/superkuo/CLionProjects/Tic\ Tac\ Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 Tic_Tac_Toe"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/superkuo/CLionProjects/Tic\ Tac\ Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/superkuo/CLionProjects/Tic\ Tac\ Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/superkuo/CLionProjects/Tic\ Tac\ Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 Tic_Tac_Toe"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Tic_Tac_Toe/fast">
-				<Option output="/Users/superkuo/CLionProjects/Tic Tac Toe/cmake-build-debug/Tic_Tac_Toe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/superkuo/CLionProjects/Tic Tac Toe/cmake-build-debug"/>
+				<Option output="/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug/Tic_Tac_Toe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -71,23 +71,23 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/superkuo/CLionProjects/Tic\ Tac\ Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 Tic_Tac_Toe/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/superkuo/CLionProjects/Tic\ Tac\ Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/superkuo/CLionProjects/Tic\ Tac\ Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/superkuo/CLionProjects/Tic\ Tac\ Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 Tic_Tac_Toe/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/superkuo/CLionProjects/Tic Tac Toe/TTTFunctions.c">
+		<Unit filename="/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/TTTFunctions.c">
 			<Option target="Tic_Tac_Toe"/>
 		</Unit>
-		<Unit filename="/Users/superkuo/CLionProjects/Tic Tac Toe/TTTFunctions.h">
+		<Unit filename="/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/TTTFunctions.h">
 			<Option target="Tic_Tac_Toe"/>
 		</Unit>
-		<Unit filename="/Users/superkuo/CLionProjects/Tic Tac Toe/main.c">
+		<Unit filename="/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/main.c">
 			<Option target="Tic_Tac_Toe"/>
 		</Unit>
-		<Unit filename="/Users/superkuo/CLionProjects/Tic Tac Toe/CMakeLists.txt">
+		<Unit filename="/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
