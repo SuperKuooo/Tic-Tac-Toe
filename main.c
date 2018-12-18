@@ -15,5 +15,8 @@ void game_manager(void) {
     if (!strcmp(game_mode, "PVP")){
         PVP_game();
     }
+    if(restart()){
+        game_manager();
+    }
 }
 
