@@ -9,14 +9,16 @@
 /Users/superkuo/Documents/GitHub/Tic-Tac-Toe/TTTFunctions.c
 TTTFunctions.h
 /Users/superkuo/Documents/GitHub/Tic-Tac-Toe/TTTFunctions.h
+
+/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/TTTFunctions.h
 stdio.h
 -
 string.h
 -
 stdlib.h
 -
-
-/Users/superkuo/Documents/GitHub/Tic-Tac-Toe/TTTFunctions.h
+ctype.h
+-
 
 /Users/superkuo/Documents/GitHub/Tic-Tac-Toe/main.c
 string.h

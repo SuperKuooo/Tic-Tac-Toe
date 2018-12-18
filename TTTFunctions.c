@@ -1,15 +1,63 @@
 #include "TTTFunctions.h"
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 
 
+void game_manager(void) {
+    char game_mode[SHORT_STRING];
+    strcpy(game_mode, main_menu()); //picks game mode
+    if (!strcmp(game_mode, "PVP")) {
+        PVP_game();
+    } else if (strcmp(game_mode, "PVE")) {
+        PVE_game();
+    }
+    if (restart()) {
+        game_manager();
+    }
+}
+
+void PVE_game(void) {
+    int player = 0;
+    int go = 0;
+    int row = 0, column = 0;
+    int winner = FALSE;
+    char board[3][3] = //Global board variable
+            {
+                    {'1', '2', '3'},
+                    {'4', '5', '6'},
+                    {'7', '8', '9'}
+            };
+
+    for (int i = 0; i < 9 && winner == FALSE; i++) {
+        print_board(board);
+
+        player = i % 2 + 1;
+
+        do {
+            printf("\nPlayer %d, please enter the number of the square "
+                   "where you want to place your %c: ", player, (player == 1) ? 'X' : 'O');
+            if (scanf("%d", &go) == 1){
+                getchar();
+            }
+            else{
+                continue;
+            }
+            row = --go / 3;
+            column = go % 3;
+        } while (go < 0 || go > 9 || board[row][column] > '9');
+        board[row][column] = (player == 1) ? 'X' : 'O';
+        winner = check_win(player, board);
+    }
+    print_board(board);
+    if (winner == FALSE)
+        printf("\nDraw\n");
+    else
+        printf("\nPlayer %d, YOU WON!\n", winner);
+}
 
 void input_validation(char *user_input) {
-    char *vald; //Input trim and validation
+    char *valid; //Input trim and validation
 
-    if ((vald = strchr(user_input, '\n')) != NULL)
-        *vald = '\0';
+    if ((valid = strchr(user_input, '\n')) != NULL)
+        *valid = '\0';
     else {
         printf("Error: Input too Long MAX %d characters. \n", INPUT_STRING);
         exit(1);
@@ -89,13 +137,12 @@ void PVP_game(void) {
         player = i % 2 + 1;
 
         do {
-            printf("\nPlayer %d, please enter the number of the square "
-                   "where you want to place your %c: ", player, (player == 1) ? 'X' : 'O');
-            scanf("%d", &go);
-            getchar();
+            go = coordinates_validation(player);
+
             row = --go / 3;
             column = go % 3;
         } while (go < 0 || go > 9 || board[row][column] > '9');
+
         board[row][column] = (player == 1) ? 'X' : 'O';
         winner = check_win(player, board);
     }
@@ -104,6 +151,29 @@ void PVP_game(void) {
         printf("\nDraw\n");
     else
         printf("\nPlayer %d, YOU WON!\n", winner);
+}
+
+
+int coordinates_validation(int player){
+    int input;
+    char valid;
+
+    printf("\nPlayer %d, please enter the number of the square "
+           "where you want to place your %c: ", player, (player == 1) ? 'X' : 'O');
+    scanf("%d", &input);
+    valid  = getchar();
+    while (valid != '\n') {
+        if (isalpha(valid)) {
+            while (getchar() != '\n');
+            printf("Invalid input, try again.\n");
+            return -1;
+        }
+    }
+    if (input <= 0 || input > 100) {
+        printf("Guess out of bounds, try again.\n");
+        return -1;
+    }
+    return input;
 }
 
 int restart(void) {
