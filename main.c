@@ -6,7 +6,7 @@ void game_manager(void);
 
 int main(void) {
     game_manager();
-
+    printf("Hey Man This is the first Push");
     return 0;
 }
 
