@@ -3,11 +3,14 @@
 
 void game_manager(void) {
     char game_mode[SHORT_STRING];
+
     strcpy(game_mode, main_menu()); //picks game mode
     if (!strcmp(game_mode, "PVP")) {
         PVP_game();
-    } else if (strcmp(game_mode, "PVE")) {
+    } else if (!strcmp(game_mode, "PVE")) {
         PVE_game();
+    } else if (!strcmp(game_mode, "EXIT")) {
+        return;
     }
     if (restart()) {
         game_manager();
@@ -16,8 +19,6 @@ void game_manager(void) {
 
 void PVE_game(void) {
     int player = 0;
-    int go = 0;
-    int row = 0, column = 0;
     int winner = FALSE;
     char board[3][3] = //Global board variable
             {
@@ -28,22 +29,9 @@ void PVE_game(void) {
 
     for (int i = 0; i < 9 && winner == FALSE; i++) {
         print_board(board);
-
         player = i % 2 + 1;
 
-        do {
-            printf("\nPlayer %d, please enter the number of the square "
-                   "where you want to place your %c: ", player, (player == 1) ? 'X' : 'O');
-            if (scanf("%d", &go) == 1){
-                getchar();
-            }
-            else{
-                continue;
-            }
-            row = --go / 3;
-            column = go % 3;
-        } while (go < 0 || go > 9 || board[row][column] > '9');
-        board[row][column] = (player == 1) ? 'X' : 'O';
+        while (coordinates_validation(player, board) == -1);
         winner = check_win(player, board);
     }
     print_board(board);
@@ -116,13 +104,11 @@ char *main_menu(void) {
         printf("\nInput undefined. Please enter again. \n");
         main_menu();
     }
+    return "ERROR";
 }
 
 void PVP_game(void) {
     int player = 0;
-    int go = 0;
-    int row = 0;
-    int column = 0;
     int winner = FALSE;
     char board[3][3] = //Global board variable
             {
@@ -133,17 +119,8 @@ void PVP_game(void) {
 
     for (int i = 0; i < 9 && winner == FALSE; i++) {
         print_board(board);
-
         player = i % 2 + 1;
-
-        do {
-            go = coordinates_validation(player);
-
-            row = --go / 3;
-            column = go % 3;
-        } while (go < 0 || go > 9 || board[row][column] > '9');
-
-        board[row][column] = (player == 1) ? 'X' : 'O';
+        while (coordinates_validation(player, board) == -1);
         winner = check_win(player, board);
     }
     print_board(board);
@@ -154,26 +131,29 @@ void PVP_game(void) {
 }
 
 
-int coordinates_validation(int player){
+int coordinates_validation(int player, char board[3][3]) {
     int input;
+    int row, column;
     char valid;
 
     printf("\nPlayer %d, please enter the number of the square "
            "where you want to place your %c: ", player, (player == 1) ? 'X' : 'O');
     scanf("%d", &input);
-    valid  = getchar();
-    while (valid != '\n') {
+    while ((valid = getchar()) != '\n') {
         if (isalpha(valid)) {
             while (getchar() != '\n');
             printf("Invalid input, try again.\n");
             return -1;
         }
     }
-    if (input <= 0 || input > 100) {
-        printf("Guess out of bounds, try again.\n");
+    row = --input / 3;
+    column = input % 3;
+    if (input < 0 || input > 9 || board[row][column] > '9') {
+        printf("Invalid input, try again.\n");
         return -1;
     }
-    return input;
+    board[row][column] = (player == 1) ? 'X' : 'O';
+    return 0;
 }
 
 int restart(void) {
