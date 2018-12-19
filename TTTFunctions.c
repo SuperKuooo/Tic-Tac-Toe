@@ -1,5 +1,5 @@
 #include "TTTFunctions.h"
-
+//Test
 
 void game_manager(void) {
     char game_mode[SHORT_STRING];
@@ -17,10 +17,47 @@ void game_manager(void) {
     }
 }
 
+int AI_manager(char board[3][3]) {
+    FILE *evaluation_out;
+    char imaginary_board[3][3] = {
+            {'1', '2', '3'},
+            {'4', '5', '6'},
+            {'7', '8', '9'}
+    };
+    char temp;
+
+    if ((evaluation_out = fopen("board_outcome.txt", "w+")) == NULL) {
+        printf("Cannot Open File\n");
+        exit(EXIT_FAILURE);
+    }
+    for (int row = 0; row <= 2; row++) {
+        strcpy(imaginary_board[row], board[row]);
+    }
+    for (int row = 0; row <= 2; row++) {
+        for (int column = 0; column <= 2; column++) {
+            if (imaginary_board[row][column] == 'O' || imaginary_board[row][column] == 'X') {
+                continue;
+            } else {
+                temp = imaginary_board[row][column];
+                imaginary_board[row][column] = 'O';
+                print_board(imaginary_board, evaluation_out);
+                fprintf(evaluation_out, "%d\n", check_win(2, imaginary_board));
+                imaginary_board[row][column] = temp;
+            }
+        }
+    }
+
+    fclose(evaluation_out);
+}
+
+void board_analysis(char board[3][3]){
+    
+}
+
 void PVE_game(void) {
     int player = 0;
     int winner = FALSE;
-    char board[3][3] = //Global board variable
+    char board[3][3] =
             {
                     {'1', '2', '3'},
                     {'4', '5', '6'},
@@ -28,13 +65,16 @@ void PVE_game(void) {
             };
 
     for (int i = 0; i < 9 && winner == FALSE; i++) {
-        print_board(board);
+        print_board(board, stdout);
         player = i % 2 + 1;
-
-        while (coordinates_validation(player, board) == -1);
+        if (player == 1) {
+            while (coordinates_validation(player, board) == -1);
+        } else if (player == 2) {
+            AI_manager(board);
+        }
         winner = check_win(player, board);
     }
-    print_board(board);
+    print_board(board, stdout);
     if (winner == FALSE)
         printf("\nDraw\n");
     else
@@ -52,13 +92,13 @@ void input_validation(char *user_input) {
     }
 }
 
-void print_board(char board[3][3]) {
-    printf("\n\n");
-    printf(" %c | %c | %c\n", board[0][0], board[0][1], board[0][2]);
-    printf("-----------\n");
-    printf(" %c | %c | %c\n", board[1][0], board[1][1], board[1][2]);
-    printf("-----------\n");
-    printf(" %c | %c | %c\n", board[2][0], board[2][1], board[2][2]);
+void print_board(char board[3][3], FILE *stream) {
+    fprintf(stream, "\n\n");
+    fprintf(stream, " %c | %c | %c\n", board[0][0], board[0][1], board[0][2]);
+    fprintf(stream, "-----------\n");
+    fprintf(stream, " %c | %c | %c\n", board[1][0], board[1][1], board[1][2]);
+    fprintf(stream, "-----------\n");
+    fprintf(stream, " %c | %c | %c\n", board[2][0], board[2][1], board[2][2]);
 }
 
 int check_win(int player, char board[3][3]) {
@@ -88,7 +128,8 @@ char *main_menu(void) {
     printf("q,   quit:         Quit the game\n");
     printf("\n......................................................\n");
     printf("%s", input_prompt);
-    fgets(user_input, INPUT_STRING, stdin); //gets user input
+    //fgets(user_input, INPUT_STRING, stdin); //gets user input
+    strcpy(user_input, "pve\n");
     input_validation(user_input);
 
     if (!strcmp(user_input, "PvP") || !strcmp(user_input, "pvp") || !strcmp(user_input, "Game Mode 1")) {
@@ -110,7 +151,7 @@ char *main_menu(void) {
 void PVP_game(void) {
     int player = 0;
     int winner = FALSE;
-    char board[3][3] = //Global board variable
+    char board[3][3] =
             {
                     {'1', '2', '3'},
                     {'4', '5', '6'},
@@ -118,18 +159,17 @@ void PVP_game(void) {
             };
 
     for (int i = 0; i < 9 && winner == FALSE; i++) {
-        print_board(board);
+        print_board(board, stdout);
         player = i % 2 + 1;
         while (coordinates_validation(player, board) == -1);
         winner = check_win(player, board);
     }
-    print_board(board);
+    print_board(board, stdout);
     if (winner == FALSE)
         printf("\nDraw\n");
     else
         printf("\nPlayer %d, YOU WON!\n", winner);
 }
-
 
 int coordinates_validation(int player, char board[3][3]) {
     int input;
