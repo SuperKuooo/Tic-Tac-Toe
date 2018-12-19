@@ -1,16 +1,58 @@
 #include "TTTFunctions.h"
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 
-char board[3][3] = //Global board variable
-        {
-                {'1', '2', '3'},
-                {'4', '5', '6'},
-                {'7', '8', '9'}
-        };
 
-void print_board(void) {
+void game_manager(void) {
+    char game_mode[SHORT_STRING];
+
+    strcpy(game_mode, main_menu()); //picks game mode
+    if (!strcmp(game_mode, "PVP")) {
+        PVP_game();
+    } else if (!strcmp(game_mode, "PVE")) {
+        PVE_game();
+    } else if (!strcmp(game_mode, "EXIT")) {
+        return;
+    }
+    if (restart()) {
+        game_manager();
+    }
+}
+
+void PVE_game(void) {
+    int player = 0;
+    int winner = FALSE;
+    char board[3][3] = //Global board variable
+            {
+                    {'1', '2', '3'},
+                    {'4', '5', '6'},
+                    {'7', '8', '9'}
+            };
+
+    for (int i = 0; i < 9 && winner == FALSE; i++) {
+        print_board(board);
+        player = i % 2 + 1;
+
+        while (coordinates_validation(player, board) == -1);
+        winner = check_win(player, board);
+    }
+    print_board(board);
+    if (winner == FALSE)
+        printf("\nDraw\n");
+    else
+        printf("\nPlayer %d, YOU WON!\n", winner);
+}
+
+void input_validation(char *user_input) {
+    char *valid; //Input trim and validation
+
+    if ((valid = strchr(user_input, '\n')) != NULL)
+        *valid = '\0';
+    else {
+        printf("Error: Input too Long MAX %d characters. \n", INPUT_STRING);
+        exit(1);
+    }
+}
+
+void print_board(char board[3][3]) {
     printf("\n\n");
     printf(" %c | %c | %c\n", board[0][0], board[0][1], board[0][2]);
     printf("-----------\n");
@@ -19,7 +61,7 @@ void print_board(void) {
     printf(" %c | %c | %c\n", board[2][0], board[2][1], board[2][2]);
 }
 
-int check_win(int player) {
+int check_win(int player, char board[3][3]) {
     int line;
 
     if ((board[0][0] == board[1][1] && board[0][0] == board[2][2]) ||
@@ -38,7 +80,6 @@ int check_win(int player) {
 char *main_menu(void) {
     const char input_prompt[INPUT_STRING] = "\nPLAY MODE> "; //repeats to let user know to input
     char user_input[INPUT_STRING]; //takes user's choice on game mode
-    char *vald; //Input trim and validation
 
     printf("\n**************** Welcome to Tic Tac Toe ****************\n\n");
     printf("Choose a play mode:\n\n");
@@ -47,14 +88,9 @@ char *main_menu(void) {
     printf("q,   quit:         Quit the game\n");
     printf("\n......................................................\n");
     printf("%s", input_prompt);
-
     fgets(user_input, INPUT_STRING, stdin); //gets user input
-    if ((vald = strchr(user_input, '\n')) != NULL)
-        *vald = '\0';
-    else {
-        printf("Error: Input too Long MAX %d characters. \n", INPUT_STRING);
-        exit(1);
-    }
+    input_validation(user_input);
+
     if (!strcmp(user_input, "PvP") || !strcmp(user_input, "pvp") || !strcmp(user_input, "Game Mode 1")) {
         printf("Entering %s.\n", user_input);
         return "PVP";
@@ -68,33 +104,68 @@ char *main_menu(void) {
         printf("\nInput undefined. Please enter again. \n");
         main_menu();
     }
+    return "ERROR";
 }
 
 void PVP_game(void) {
     int player = 0;
-    int go = 0;
-    int row = 0;
-    int column = 0;
     int winner = FALSE;
+    char board[3][3] = //Global board variable
+            {
+                    {'1', '2', '3'},
+                    {'4', '5', '6'},
+                    {'7', '8', '9'}
+            };
 
     for (int i = 0; i < 9 && winner == FALSE; i++) {
-        print_board();
-
+        print_board(board);
         player = i % 2 + 1;
-
-        do {
-            printf("\nPlayer %d, please enter the number of the square "
-                   "where you want to place your %c: ", player, (player == 1) ? 'X' : 'O');
-            scanf("%d", &go);
-            row = --go / 3;
-            column = go % 3;
-        } while (go < 0 || go > 9 || board[row][column] > '9');
-        board[row][column] = (player == 1) ? 'X' : 'O';
-        winner = check_win(player);
+        while (coordinates_validation(player, board) == -1);
+        winner = check_win(player, board);
     }
-    print_board();
+    print_board(board);
     if (winner == FALSE)
         printf("\nDraw\n");
     else
-        printf("\nplayer %d, YOU WON!\n", winner);
+        printf("\nPlayer %d, YOU WON!\n", winner);
+}
+
+
+int coordinates_validation(int player, char board[3][3]) {
+    int input;
+    int row, column;
+    char valid;
+
+    printf("\nPlayer %d, please enter the number of the square "
+           "where you want to place your %c: ", player, (player == 1) ? 'X' : 'O');
+    scanf("%d", &input);
+    while ((valid = getchar()) != '\n') {
+        if (isalpha(valid)) {
+            while (getchar() != '\n');
+            printf("Invalid input, try again.\n");
+            return -1;
+        }
+    }
+    row = --input / 3;
+    column = input % 3;
+    if (input < 0 || input > 9 || board[row][column] > '9') {
+        printf("Invalid input, try again.\n");
+        return -1;
+    }
+    board[row][column] = (player == 1) ? 'X' : 'O';
+    return 0;
+}
+
+int restart(void) {
+    char user_input[INPUT_STRING];
+
+    printf("Do you want to play another game?\n\n");
+    fgets(user_input, INPUT_STRING, stdin);
+    input_validation(user_input);
+    if (!strcmp(user_input, "Yes") || !strcmp(user_input, "yes") || !strcmp(user_input, "y")) {
+        return 1;
+    } else {
+        printf("Thank you for playing! Goodbye\n");
+        return 0;
+    }
 }
