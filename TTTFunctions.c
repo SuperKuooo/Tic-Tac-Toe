@@ -24,7 +24,8 @@ int AI_manager(char board[3][3]) {
             {'4', '5', '6'},
             {'7', '8', '9'}
     };
-    char temp;
+    int temp, minimax[9], move[9], final;
+    char header;
 
     if ((evaluation_out = fopen("board_outcome.txt", "w+")) == NULL) {
         printf("Cannot Open File\n");
@@ -33,25 +34,85 @@ int AI_manager(char board[3][3]) {
     for (int row = 0; row <= 2; row++) {
         strcpy(imaginary_board[row], board[row]);
     }
+    fprintf(evaluation_out, "# 1 2 3 4 5 6 7 8 9\n");
+    fprintf(evaluation_out, "+ ");
+    board_analysis(imaginary_board, evaluation_out, 1); //depth 1
+    fprintf(evaluation_out, "\n");
+
     for (int row = 0; row <= 2; row++) {
         for (int column = 0; column <= 2; column++) {
             if (imaginary_board[row][column] == 'O' || imaginary_board[row][column] == 'X') {
                 continue;
             } else {
+                int player = 2;
                 temp = imaginary_board[row][column];
-                imaginary_board[row][column] = 'O';
-                print_board(imaginary_board, evaluation_out);
-                fprintf(evaluation_out, "%d\n", check_win(2, imaginary_board));
+                imaginary_board[row][column] = (player == 1) ? 'X' : 'O';
+                fprintf(evaluation_out, "%d ", row * 3 + column + 1);
+                board_analysis(imaginary_board, evaluation_out, 2);
+                fprintf(evaluation_out, "\n");
                 imaginary_board[row][column] = temp;
             }
         }
     }
 
+    if (fseek(evaluation_out, 0L, SEEK_SET) != 0) {
+        /* Handle repositioning error */
+        printf("Failure to rewind files\n");
+    }
+
+    while (fscanf(evaluation_out, " %c %d %d %d %d %d %d %d %d %d", &header, &minimax[0], &minimax[1], &minimax[2],
+                  &minimax[3], &minimax[4], &minimax[5], &minimax[6], &minimax[7], &minimax[8]) != EOF) {
+        if (header == '+') {
+            for (int i = 0; i <= 8; i++) {
+                move[i] = minimax[i];
+            }
+        } else if (isdigit(header)) {
+            //printf("Hello\n");
+            //printf("%c",header);
+            for (int i = 0; i <= 8; i++) {
+                if (minimax[i] == 1) {
+                    move[header -'1'] = 1;
+                    break;
+                }
+            }
+        }
+    }
+    fprintf(evaluation_out, "\n\n@");
+    for (int i = 0; i <= 8; i++) {
+        fprintf(evaluation_out, "%d ", move[i]);
+    }
+
     fclose(evaluation_out);
+
+    /*if ((evaluation_out = fopen("board_outcome.txt", "w+")) == NULL) {
+        printf("Cannot Open File\n");
+        exit(EXIT_FAILURE);
+    }
+    for (int i = 0 ; i<=8;i++){
+        fprintf(evaluation_out, "%d ", move[i]);
+    }
+    fclose(evaluation_out);*/
+    return 0;
 }
 
-void board_analysis(char board[3][3]){
-    
+void board_analysis(char imaginary_board[3][3], FILE *evaluation_out, int player) { //sees 1 step ahead
+    char temp;
+
+    player = (player % 2) + 1;
+    for (int row = 0; row <= 2; row++) {
+        for (int column = 0; column <= 2; column++) {
+            if (imaginary_board[row][column] == 'O' || imaginary_board[row][column] == 'X') {
+                fprintf(evaluation_out, "5 ");
+                continue;
+            } else {
+                temp = imaginary_board[row][column];
+                imaginary_board[row][column] = (player == 1) ? 'X' : 'O';
+                fprintf(evaluation_out, "%d ", check_win(player, imaginary_board));
+                //print_board(imaginary_board, evaluation_out);
+                imaginary_board[row][column] = temp;
+            }
+        }
+    }
 }
 
 void PVE_game(void) {
@@ -59,8 +120,8 @@ void PVE_game(void) {
     int winner = FALSE;
     char board[3][3] =
             {
-                    {'1', '2', '3'},
-                    {'4', '5', '6'},
+                    {'X', '2', 'O'},
+                    {'4', 'O', 'X'},
                     {'7', '8', '9'}
             };
 
@@ -107,12 +168,12 @@ int check_win(int player, char board[3][3]) {
     if ((board[0][0] == board[1][1] && board[0][0] == board[2][2]) ||
         (board[0][2] == board[1][1] && board[0][2] == board[2][0]))
         return player;
-    else
-
+    else {
         for (line = 0; line <= 2; line++)
             if ((board[line][0] == board[line][1] && board[line][0] == board[line][2]) ||
                 (board[0][line] == board[1][line] && board[0][line] == board[2][line]))
                 return player;
+    }
 
     return FALSE;
 }
