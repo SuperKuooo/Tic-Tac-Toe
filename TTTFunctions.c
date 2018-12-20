@@ -67,32 +67,37 @@ int AI_manager(char board[3][3]) {
                 move[i] = minimax[i];
             }
         } else if (isdigit(header)) {
-            //printf("Hello\n");
-            //printf("%c",header);
             for (int i = 0; i <= 8; i++) {
                 if (minimax[i] == 1) {
-                    move[header -'1'] = 1;
+                    move[header - '1'] = 1;
                     break;
                 }
             }
         }
     }
-    fprintf(evaluation_out, "\n\n@");
+    fprintf(evaluation_out, "\n\n@ ");
     for (int i = 0; i <= 8; i++) {
         fprintf(evaluation_out, "%d ", move[i]);
     }
 
+    for (int i = 0; i<=8; i++){
+        if (move[i] == 2){
+            return i+1;
+        }
+    }
+    for (int i = 0; i<=8; i++){
+        if (move[i] == 0){
+            return i+1;
+        }
+    }
+    for (int i = 0; i<=8; i++){
+        if (move[i] == 1){
+            return i+1;
+        }
+    }
     fclose(evaluation_out);
 
-    /*if ((evaluation_out = fopen("board_outcome.txt", "w+")) == NULL) {
-        printf("Cannot Open File\n");
-        exit(EXIT_FAILURE);
-    }
-    for (int i = 0 ; i<=8;i++){
-        fprintf(evaluation_out, "%d ", move[i]);
-    }
-    fclose(evaluation_out);*/
-    return 0;
+    return ERROR_VALUE;
 }
 
 void board_analysis(char imaginary_board[3][3], FILE *evaluation_out, int player) { //sees 1 step ahead
@@ -101,7 +106,8 @@ void board_analysis(char imaginary_board[3][3], FILE *evaluation_out, int player
     player = (player % 2) + 1;
     for (int row = 0; row <= 2; row++) {
         for (int column = 0; column <= 2; column++) {
-            if (imaginary_board[row][column] == 'O' || imaginary_board[row][column] == 'X') {
+            if (imaginary_board[row][column] == 'O' || imaginary_board[row][column] == 'X' ||
+                check_win(player, imaginary_board)) {
                 fprintf(evaluation_out, "5 ");
                 continue;
             } else {
@@ -117,11 +123,12 @@ void board_analysis(char imaginary_board[3][3], FILE *evaluation_out, int player
 
 void PVE_game(void) {
     int player = 0;
+    int AI_input= 0;
     int winner = FALSE;
     char board[3][3] =
             {
-                    {'X', '2', 'O'},
-                    {'4', 'O', 'X'},
+                    {'1', '2', '3'},
+                    {'4', '5', '6'},
                     {'7', '8', '9'}
             };
 
@@ -131,7 +138,8 @@ void PVE_game(void) {
         if (player == 1) {
             while (coordinates_validation(player, board) == -1);
         } else if (player == 2) {
-            AI_manager(board);
+            AI_input = AI_manager(board);
+            board[--AI_input / 3][AI_input % 3] = 'O';
         }
         winner = check_win(player, board);
     }
