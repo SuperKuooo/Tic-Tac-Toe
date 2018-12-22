@@ -24,19 +24,33 @@ int AI_manager(char board[3][3]) {
             {'4', '5', '6'},
             {'7', '8', '9'}
     };
-    int temp, minimax[9], move[9], final;
-    char header;
+    int move[9];
+    for (int row = 0; row <= 2; row++) {
+        strcpy(imaginary_board[row], board[row]); //so it doesn't mess the original board up.
+    }
 
     if ((evaluation_out = fopen("board_outcome.txt", "w+")) == NULL) {
         printf("Cannot Open File\n");
         exit(EXIT_FAILURE);
     }
-    for (int row = 0; row <= 2; row++) {
-        strcpy(imaginary_board[row], board[row]);
-    }
-    fprintf(evaluation_out, "# 1 2 3 4 5 6 7 8 9\n");
+    fprintf(evaluation_out, "# 1 2 3 4 5 6 7 8 9\n"); //Prints header for easier clarification and sorting.
+
+
+    see_the_future(imaginary_board, evaluation_out, 2);
+
+    sort_AI_results(evaluation_out, move);
+
+    fclose(evaluation_out);
+
+    return return_move(move);
+}
+
+void see_the_future(char imaginary_board[3][3], FILE *evaluation_out, int depth) {
+    char temp;
+    static int round_depth = 0;
+
     fprintf(evaluation_out, "+ ");
-    board_analysis(imaginary_board, evaluation_out, 1); //depth 1
+    board_analysis(imaginary_board, evaluation_out, 1);
     fprintf(evaluation_out, "\n");
 
     for (int row = 0; row <= 2; row++) {
@@ -44,9 +58,8 @@ int AI_manager(char board[3][3]) {
             if (imaginary_board[row][column] == 'O' || imaginary_board[row][column] == 'X') {
                 continue;
             } else {
-                int player = 2;
                 temp = imaginary_board[row][column];
-                imaginary_board[row][column] = (player == 1) ? 'X' : 'O';
+                imaginary_board[row][column] = 'O';
                 fprintf(evaluation_out, "%d ", row * 3 + column + 1);
                 board_analysis(imaginary_board, evaluation_out, 2);
                 fprintf(evaluation_out, "\n");
@@ -55,8 +68,13 @@ int AI_manager(char board[3][3]) {
         }
     }
 
+}
+
+void sort_AI_results(FILE *evaluation_out, int move[9]) {
+    int minimax[9];
+    char header;
+
     if (fseek(evaluation_out, 0L, SEEK_SET) != 0) {
-        /* Handle repositioning error */
         printf("Failure to rewind files\n");
     }
 
@@ -76,28 +94,10 @@ int AI_manager(char board[3][3]) {
         }
     }
     fprintf(evaluation_out, "\n\n@ ");
+
     for (int i = 0; i <= 8; i++) {
         fprintf(evaluation_out, "%d ", move[i]);
     }
-
-    for (int i = 0; i<=8; i++){
-        if (move[i] == 2){
-            return i+1;
-        }
-    }
-    for (int i = 0; i<=8; i++){
-        if (move[i] == 0){
-            return i+1;
-        }
-    }
-    for (int i = 0; i<=8; i++){
-        if (move[i] == 1){
-            return i+1;
-        }
-    }
-    fclose(evaluation_out);
-
-    return ERROR_VALUE;
 }
 
 void board_analysis(char imaginary_board[3][3], FILE *evaluation_out, int player) { //sees 1 step ahead
@@ -121,9 +121,29 @@ void board_analysis(char imaginary_board[3][3], FILE *evaluation_out, int player
     }
 }
 
+int return_move(int move[9]) {
+    for (int i = 0; i <= 8; i++) {
+        if (move[i] == 2) {
+            return i + 1;
+        }
+    }
+    for (int i = 0; i <= 8; i++) {
+        if (move[i] == 0) {
+            return i + 1;
+        }
+    }
+    for (int i = 0; i <= 8; i++) {
+        if (move[i] == 1) {
+            return i + 1;
+        }
+    }
+
+    return ERROR_VALUE;
+}
+
 void PVE_game(void) {
     int player = 0;
-    int AI_input= 0;
+    int AI_input = 0;
     int winner = FALSE;
     char board[3][3] =
             {
@@ -139,7 +159,7 @@ void PVE_game(void) {
             while (coordinates_validation(player, board) == -1);
         } else if (player == 2) {
             AI_input = AI_manager(board);
-            board[--AI_input / 3][AI_input % 3] = 'O';
+            //board[--AI_input / 3][AI_input % 3] = 'O';
         }
         winner = check_win(player, board);
     }
@@ -214,6 +234,7 @@ char *main_menu(void) {
         printf("\nInput undefined. Please enter again. \n");
         main_menu();
     }
+
     return "ERROR";
 }
 
@@ -247,6 +268,7 @@ int coordinates_validation(int player, char board[3][3]) {
 
     printf("\nPlayer %d, please enter the number of the square "
            "where you want to place your %c: ", player, (player == 1) ? 'X' : 'O');
+
     scanf("%d", &input);
     while ((valid = getchar()) != '\n') {
         if (isalpha(valid)) {
@@ -262,6 +284,7 @@ int coordinates_validation(int player, char board[3][3]) {
         return -1;
     }
     board[row][column] = (player == 1) ? 'X' : 'O';
+
     return 0;
 }
 

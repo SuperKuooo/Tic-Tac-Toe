@@ -13,13 +13,15 @@
   <component name="ChangeListManager">
     <list default="true" id="654873bc-6046-431b-b2af-1ba8775c6639" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TTTFunctions.c" beforeDir="false" afterPath="$PROJECT_DIR$/TTTFunctions.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TTTFunctions.h" beforeDir="false" afterPath="$PROJECT_DIR$/TTTFunctions.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Tic_Tac_Toe.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Tic_Tac_Toe.dir/C.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Tic_Tac_Toe.dir/TTTFunctions.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Tic_Tac_Toe.dir/TTTFunctions.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Tic_Tac_Toe.dir/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Tic_Tac_Toe.dir/main.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Tic_Tac_Toe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Tic_Tac_Toe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/board_outcome.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/board_outcome.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,12 +36,14 @@
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="main.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.c">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="75">
+              <caret line="5" column="63" selection-start-line="5" selection-start-column="63" selection-end-line="5" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -47,17 +51,17 @@
       <file leaf-file-name="TTTFunctions.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TTTFunctions.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-815">
-              <caret line="81" column="48" lean-forward="true" selection-start-line="81" selection-start-column="48" selection-end-line="81" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="board_outcome.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cmake-build-debug/board_outcome.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
+            <state relative-caret-position="41">
+              <caret line="49" column="31" selection-start-line="49" selection-start-column="31" selection-end-line="49" selection-end-column="31" />
+              <folding>
+                <element signature="e#34#389#0" />
+                <element signature="e#2246#3058#0" />
+                <element signature="e#3910#4282#0" />
+                <element signature="e#4882#5392#0" />
+                <element signature="e#5394#6745#0" />
+                <element signature="e#6747#7349#0" />
+                <element signature="e#8226#8978#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -65,16 +69,8 @@
       <file leaf-file-name="TTTFunctions.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TTTFunctions.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="3" column="18" lean-forward="true" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tictactoefunc.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../C Develop/Tic Tac Toe/tictactoefunc.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="135">
+              <caret line="9" column="31" lean-forward="true" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -82,37 +78,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="engine.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../C Develop/Tic Tac Toe/engine.c">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="evaluation.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../C Develop/Tic Tac Toe/evaluation.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="44" selection-start-line="44" selection-end-line="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="evaluation2.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../C Develop/Tic Tac Toe/evaluation2.c">
+      <file leaf-file-name="board_outcome.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cmake-build-debug/board_outcome.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
-              <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+              <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="import.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../C Develop/Tic Tac Toe/import.c">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="tictactoe.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../C Develop/Tic Tac Toe/tictactoe.c">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -123,6 +95,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/TTT_PvE_Functions.h" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/TTT_PvE_Functions.c" />
         <option value="$PROJECT_DIR$/main.c" />
         <option value="$PROJECT_DIR$/TTTFunctions.h" />
         <option value="$PROJECT_DIR$/cmake-build-debug/board_outcome.txt" />
@@ -140,7 +115,9 @@
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -153,11 +130,6 @@
             <path>
               <item name="Tic_Tac_Toe" type="b2602c69:ProjectViewProjectNode" />
               <item name="Tic-Tac-Toe" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tic_Tac_Toe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tic-Tac-Toe" type="462c0819:PsiDirectoryNode" />
-              <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -203,18 +175,18 @@
       <option name="presentableId" value="Default" />
       <updated>1545113367178</updated>
       <workItem from="1545113370396" duration="9667000" />
-      <workItem from="1545265442794" duration="13969000" />
+      <workItem from="1545265442794" duration="18952000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27447000" />
+    <option name="totallyTimeSpent" value="32430000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.108333334" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14305556" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32900944" />
       <window_info anchor="bottom" id="CMake" order="7" />
@@ -262,13 +234,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/TTTFunctions.c</url>
-          <line>62</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="29" />
     </breakpoint-manager>
   </component>
@@ -277,9 +242,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -326,6 +288,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="795">
           <caret line="53" column="4" selection-start-line="53" selection-start-column="4" selection-end-line="53" selection-end-column="4" />
+          <folding>
+            <element signature="e#34#389#0" />
+            <element signature="e#2246#3058#0" />
+            <element signature="e#3910#4282#0" />
+            <element signature="e#4882#5392#0" />
+            <element signature="e#5394#6745#0" />
+            <element signature="e#6747#7349#0" />
+            <element signature="e#8226#8978#0" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -338,9 +309,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -355,6 +323,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="32" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="e#34#389#0" />
+            <element signature="e#2246#3058#0" />
+            <element signature="e#3910#4282#0" />
+            <element signature="e#4882#5392#0" />
+            <element signature="e#5394#6745#0" />
+            <element signature="e#6747#7349#0" />
+            <element signature="e#8226#8978#0" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -382,9 +359,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -393,6 +367,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#34#389#0" />
+            <element signature="e#2246#3058#0" />
+            <element signature="e#3910#4282#0" />
+            <element signature="e#4882#5392#0" />
+            <element signature="e#5394#6745#0" />
+            <element signature="e#6747#7349#0" />
+            <element signature="e#8226#8978#0" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -413,41 +396,77 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../C Develop/Tic Tac Toe/tictactoefunc.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="-477">
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.c">
+    <entry file="file://$PROJECT_DIR$/TTT_PvP_Functions.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="45">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TTTFunctions.h">
+    <entry file="file://$PROJECT_DIR$/TTT_PvP_Functions.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TTT_PvE_Functions.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TTT_PvE_Functions.h">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret line="3" column="18" lean-forward="true" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+          <caret column="1" lean-forward="true" selection-start-column="1" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.c">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TTTFunctions.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="31" lean-forward="true" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/board_outcome.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
+        <state relative-caret-position="30">
+          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="63" selection-start-line="5" selection-start-column="63" selection-end-line="5" selection-end-column="63" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TTTFunctions.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-815">
-          <caret line="81" column="48" lean-forward="true" selection-start-line="81" selection-start-column="48" selection-end-line="81" selection-end-column="48" />
+        <state relative-caret-position="41">
+          <caret line="49" column="31" selection-start-line="49" selection-start-column="31" selection-end-line="49" selection-end-column="31" />
+          <folding>
+            <element signature="e#34#389#0" />
+            <element signature="e#2246#3058#0" />
+            <element signature="e#3910#4282#0" />
+            <element signature="e#4882#5392#0" />
+            <element signature="e#5394#6745#0" />
+            <element signature="e#6747#7349#0" />
+            <element signature="e#8226#8978#0" />
+          </folding>
         </state>
       </provider>
     </entry>
