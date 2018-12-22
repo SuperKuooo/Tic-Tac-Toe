@@ -17,7 +17,7 @@ void game_manager(void) {
     }
 }
 
-int AI_manager(char board[3][3]) {
+int AI_manager(char board[3][3], int depth) {
     FILE *evaluation_out;
     char imaginary_board[3][3] = {
             {'1', '2', '3'},
@@ -55,7 +55,7 @@ void board_analysis(char board[3][3]){
 }
 
 void PVE_game(void) {
-    int player = 0;
+    int player = 0, depth;
     int winner = FALSE;
     char board[3][3] =
             {
@@ -64,13 +64,16 @@ void PVE_game(void) {
                     {'7', '8', '9'}
             };
 
+    printf("Please enter the difficulty you want (the depth of AI):\n");
+    scanf("%d", &depth);
+
     for (int i = 0; i < 9 && winner == FALSE; i++) {
         print_board(board, stdout);
         player = i % 2 + 1;
         if (player == 1) {
             while (coordinates_validation(player, board) == -1);
         } else if (player == 2) {
-            AI_manager(board);
+            AI_manager(board, depth);
         }
         winner = check_win(player, board);
     }
@@ -125,7 +128,7 @@ char *main_menu(void) {
     printf("Choose a play mode:\n\n");
     printf("PvP, Game Mode 1:  Start the game versus another player\n");
     printf("PvE, Game Mode 2:  Start the game versus the AI\n");
-    printf("q,   quit:         Quit the game\n");
+    printf("q  , Quit       :  Quit the game\n");
     printf("\n......................................................\n");
     printf("%s", input_prompt);
     //fgets(user_input, INPUT_STRING, stdin); //gets user input
