@@ -27,7 +27,7 @@ void PVE_game(void);
 
 int coordinates_validation(int player, char board[3][3]);
 
-int AI_manager(char board[3][3]);
+int AI_manager(char board[3][3], int depth);
 
 void board_analysis(char imaginary_board[3][3], FILE *evaluation_out, int player);
 
