@@ -151,7 +151,7 @@ int return_move(int move[9]) {
 }
 
 void PVE_game(void) {
-    int AI_input = 0, player = 0, depth;
+    int AI_input = 0, player = 0, depth = 2;
     int winner = FALSE;
     char board[3][3] =
             {
@@ -161,7 +161,7 @@ void PVE_game(void) {
             };
 
     printf("Please enter the difficulty you want (the depth of AI):\n");
-    scanf("%d", &depth);
+    //scanf("%d", &depth);
 
     for (int i = 0; i < 9 && winner == FALSE; i++) {
         print_board(board, stdout);
