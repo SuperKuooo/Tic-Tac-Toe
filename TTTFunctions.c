@@ -33,7 +33,7 @@ int AI_manager(char board[3][3]) {
         printf("Cannot Open File\n");
         exit(EXIT_FAILURE);
     }
-    fprintf(evaluation_out, "# 1 2 3 4 5 6 7 8 9\n"); //Prints header for easier clarification and sorting.
+    fprintf(evaluation_out, "# 1 2 3 4 5 6 7 8 9\n\n"); //Prints header for easier clarification and sorting.
 
 
     see_the_future(imaginary_board, evaluation_out, 2);
@@ -47,27 +47,36 @@ int AI_manager(char board[3][3]) {
 
 void see_the_future(char imaginary_board[3][3], FILE *evaluation_out, int depth) {
     char temp;
-    static int round_depth = 0;
+    static int round_depth = 1;
 
-    fprintf(evaluation_out, "+ ");
-    board_analysis(imaginary_board, evaluation_out, 1);
-    fprintf(evaluation_out, "\n");
+    if (round_depth == 1) {
+        fprintf(evaluation_out, "+ ");
+        board_analysis(imaginary_board, evaluation_out, 1);
+        fprintf(evaluation_out, "\n");
+    }
 
-    for (int row = 0; row <= 2; row++) {
-        for (int column = 0; column <= 2; column++) {
-            if (imaginary_board[row][column] == 'O' || imaginary_board[row][column] == 'X') {
-                continue;
-            } else {
-                temp = imaginary_board[row][column];
-                imaginary_board[row][column] = 'O';
-                fprintf(evaluation_out, "%d ", row * 3 + column + 1);
-                board_analysis(imaginary_board, evaluation_out, 2);
-                fprintf(evaluation_out, "\n");
-                imaginary_board[row][column] = temp;
+    if (round_depth < depth) { //depth = 2
+        for (int row = 0; row <= 2; row++) {
+            for (int column = 0; column <= 2; column++) {
+                if (imaginary_board[row][column] == 'O' || imaginary_board[row][column] == 'X') {
+                    continue;
+                } else {
+                    temp = imaginary_board[row][column];
+                    round_depth++;
+                    imaginary_board[row][column] = 'O';
+
+                    fprintf(evaluation_out, "%d ", row * 3 + column + 1);
+                    board_analysis(imaginary_board, evaluation_out, 2);
+                    fprintf(evaluation_out, "\n");
+                    see_the_future(imaginary_board, evaluation_out, 2);
+
+                    imaginary_board[row][column] = temp;
+                }
             }
         }
     }
 
+    round_depth = 1;
 }
 
 void sort_AI_results(FILE *evaluation_out, int move[9]) {
@@ -159,7 +168,7 @@ void PVE_game(void) {
             while (coordinates_validation(player, board) == -1);
         } else if (player == 2) {
             AI_input = AI_manager(board);
-            //board[--AI_input / 3][AI_input % 3] = 'O';
+            board[--AI_input / 3][AI_input % 3] = 'O';
         }
         winner = check_win(player, board);
     }
