@@ -85,7 +85,6 @@ void see_the_future(char imaginary_board[3][3], FILE *evaluation_out, int depth)
 
 void sort_AI_results(FILE *evaluation_out, int move[9]) {
     int minimax[9];
-    int
     char header;
 
     if (fseek(evaluation_out, 0L, SEEK_SET) != 0) {
