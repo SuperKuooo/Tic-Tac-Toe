@@ -16,5 +16,6 @@ Shortcomings:
 - Player cannot choose to go first or second for PvE mode
 - Can reduce calculations with symmetry
 
-Anyway, hope you find my code helpful
-Jerry Kuo, 2018/Dec/23
+Anyway, hope you find my code helpful.
+Sincerely,
+Jerry Kuo 2018/Dec/23
