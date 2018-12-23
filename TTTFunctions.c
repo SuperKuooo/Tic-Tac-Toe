@@ -35,7 +35,7 @@ int AI_manager(char board[3][3], int depth) {
         printf("Cannot Open File\n");
         exit(EXIT_FAILURE);
     }
-    fprintf(evaluation_out, "#   1 2 3 4 5 6 7 8 9\n\n"); //Prints header for easier clarification and sorting.
+    fprintf(evaluation_out, "# 1 2 3 4 5 6 7 8 9\n\n"); //Prints header for easier clarification and sorting.
 
 
     see_the_future(imaginary_board, evaluation_out, 3);
@@ -51,7 +51,7 @@ void see_the_future(char imaginary_board[3][3], FILE *evaluation_out, int depth)
     char temp;
 
     if (round_depth == 1) {
-        fprintf(evaluation_out, "+   ");
+        fprintf(evaluation_out, "+ ");
         board_analysis(imaginary_board, evaluation_out, 1);
         fprintf(evaluation_out, "\n\n");
     }
@@ -65,10 +65,10 @@ void see_the_future(char imaginary_board[3][3], FILE *evaluation_out, int depth)
                     temp = imaginary_board[row][column];
                     round_depth++;
                     imaginary_board[row][column] = ((round_depth + 1) % 2 + 1 == 1) ? 'X' : 'O';
-                    if (round_depth == 2){
-                        fprintf(evaluation_out, "- %d ", row * 3 + column + 1);
-                    }else
-                        fprintf(evaluation_out, "~ %d ", row * 3 + column + 1);
+                    if (round_depth == 2) {
+                        fprintf(evaluation_out, "- ");
+                    } else
+                        fprintf(evaluation_out, "~ ");
 
                     board_analysis(imaginary_board, evaluation_out, (round_depth + 1) % 2 + 1);
                     fprintf(evaluation_out, "\n");
@@ -97,10 +97,17 @@ void sort_AI_results(FILE *evaluation_out, int move[9]) {
             for (int i = 0; i <= 8; i++) {
                 move[i] = minimax[i];
             }
-        } else if (isdigit(header)) {
+        } else if (header == '-') {
             for (int i = 0; i <= 8; i++) {
                 if (minimax[i] == 1) {
-                    move[header - '1'] = 1;
+                    move[i] = 1;
+                    break;
+                }
+            }
+        } else if (header == '~') {
+            for (int i = 0; i <= 8; i++) {
+                if (minimax[i] == 2) {
+                    move[i] = 2;
                     break;
                 }
             }
@@ -174,7 +181,7 @@ void PVE_game(void) {
             while (coordinates_validation(player, board) == -1);
         } else if (player == 2) {
             AI_input = AI_manager(board, depth);
-            //board[--AI_input / 3][AI_input % 3] = 'O';
+            board[--AI_input / 3][AI_input % 3] = 'O';
         }
         winner = check_win(player, board);
     }
