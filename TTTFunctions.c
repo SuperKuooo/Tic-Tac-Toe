@@ -1,6 +1,5 @@
 #include "TTTFunctions.h"
 
-//Test
 int round_depth = 1;
 
 void game_manager(void) {
@@ -67,9 +66,9 @@ void see_the_future(char imaginary_board[3][3], FILE *evaluation_out, int depth)
                     round_depth++;
                     imaginary_board[row][column] = ((round_depth + 1) % 2 + 1 == 1) ? 'X' : 'O';
                     if (round_depth == 2){
-                        fprintf(evaluation_out, "+ %d ", row * 3 + column + 1);
+                        fprintf(evaluation_out, "- %d ", row * 3 + column + 1);
                     }else
-                        fprintf(evaluation_out, "  %d ", row * 3 + column + 1);
+                        fprintf(evaluation_out, "~ %d ", row * 3 + column + 1);
 
                     board_analysis(imaginary_board, evaluation_out, (round_depth + 1) % 2 + 1);
                     fprintf(evaluation_out, "\n");

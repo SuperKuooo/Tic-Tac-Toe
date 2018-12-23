@@ -1,3 +1,7 @@
 .idea
 .xml
 .txt
+.DS_store
+cmake-build-debug/CMakeFiles/Tic_Tac_Toe.dir/TTTFunctions.c.o
+cmake-build-debug/Tic_Tac_Toe
+.idea/workspace.xml
