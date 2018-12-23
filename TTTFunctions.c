@@ -1,5 +1,7 @@
 #include "TTTFunctions.h"
+
 //Test
+int round_depth = 1;
 
 void game_manager(void) {
     char game_mode[SHORT_STRING];
@@ -25,6 +27,7 @@ int AI_manager(char board[3][3], int depth) {
             {'7', '8', '9'}
     };
     int move[9];
+
     for (int row = 0; row <= 2; row++) {
         strcpy(imaginary_board[row], board[row]); //so it doesn't mess the original board up.
     }
@@ -33,10 +36,10 @@ int AI_manager(char board[3][3], int depth) {
         printf("Cannot Open File\n");
         exit(EXIT_FAILURE);
     }
-    fprintf(evaluation_out, "# 1 2 3 4 5 6 7 8 9\n\n"); //Prints header for easier clarification and sorting.
+    fprintf(evaluation_out, "#   1 2 3 4 5 6 7 8 9\n\n"); //Prints header for easier clarification and sorting.
 
 
-    see_the_future(imaginary_board, evaluation_out, 2);
+    see_the_future(imaginary_board, evaluation_out, 3);
 
     sort_AI_results(evaluation_out, move);
 
@@ -47,15 +50,14 @@ int AI_manager(char board[3][3], int depth) {
 
 void see_the_future(char imaginary_board[3][3], FILE *evaluation_out, int depth) {
     char temp;
-    static int round_depth = 1;
 
     if (round_depth == 1) {
-        fprintf(evaluation_out, "+ ");
+        fprintf(evaluation_out, "+   ");
         board_analysis(imaginary_board, evaluation_out, 1);
-        fprintf(evaluation_out, "\n");
+        fprintf(evaluation_out, "\n\n");
     }
 
-    if (round_depth < depth) { //depth = 2
+    if (round_depth < depth) {
         for (int row = 0; row <= 2; row++) {
             for (int column = 0; column <= 2; column++) {
                 if (imaginary_board[row][column] == 'O' || imaginary_board[row][column] == 'X') {
@@ -63,20 +65,23 @@ void see_the_future(char imaginary_board[3][3], FILE *evaluation_out, int depth)
                 } else {
                     temp = imaginary_board[row][column];
                     round_depth++;
-                    imaginary_board[row][column] = 'O';
+                    imaginary_board[row][column] = ((round_depth + 1) % 2 + 1 == 1) ? 'X' : 'O';
+                    if (round_depth == 2){
+                        fprintf(evaluation_out, "+ %d ", row * 3 + column + 1);
+                    }else
+                        fprintf(evaluation_out, "  %d ", row * 3 + column + 1);
 
-                    fprintf(evaluation_out, "%d ", row * 3 + column + 1);
-                    board_analysis(imaginary_board, evaluation_out, 2);
+                    board_analysis(imaginary_board, evaluation_out, (round_depth + 1) % 2 + 1);
                     fprintf(evaluation_out, "\n");
-                    see_the_future(imaginary_board, evaluation_out, 2);
-
+                    see_the_future(imaginary_board, evaluation_out, depth); //3
                     imaginary_board[row][column] = temp;
                 }
             }
         }
+        fprintf(evaluation_out, "\n");
+        round_depth = 1;
     }
 
-    round_depth = 1;
 }
 
 void sort_AI_results(FILE *evaluation_out, int move[9]) {
@@ -118,7 +123,7 @@ void board_analysis(char imaginary_board[3][3], FILE *evaluation_out, int player
             if (imaginary_board[row][column] == 'O' || imaginary_board[row][column] == 'X' ||
                 check_win(player, imaginary_board)) {
                 fprintf(evaluation_out, "5 ");
-                continue;
+                //print_board(imaginary_board, evaluation_out);
             } else {
                 temp = imaginary_board[row][column];
                 imaginary_board[row][column] = (player == 1) ? 'X' : 'O';
@@ -170,8 +175,7 @@ void PVE_game(void) {
             while (coordinates_validation(player, board) == -1);
         } else if (player == 2) {
             AI_input = AI_manager(board, depth);
-            board[--AI_input / 3][AI_input % 3] = 'O';
-            AI_manager(board, depth);
+            //board[--AI_input / 3][AI_input % 3] = 'O';
         }
         winner = check_win(player, board);
     }
