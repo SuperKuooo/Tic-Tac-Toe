@@ -9,13 +9,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8862008-0365-454f-8cc7-53ae03f03ee1" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TTTFunctions.c" beforeDir="false" afterPath="$PROJECT_DIR$/TTTFunctions.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TTTFunctions.h" beforeDir="false" afterPath="$PROJECT_DIR$/TTTFunctions.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Tic_Tac_Toe.dir/TTTFunctions.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Tic_Tac_Toe.dir/TTTFunctions.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/board_outcome.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/board_outcome.txt" afterDir="false" />
-    </list>
+    <list default="true" id="e8862008-0365-454f-8cc7-53ae03f03ee1" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,7 +33,7 @@
       <file leaf-file-name="TTTFunctions.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TTTFunctions.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2805">
+            <state relative-caret-position="-585">
               <caret line="187" selection-start-line="187" selection-end-line="187" />
               <folding>
                 <element signature="e#5943#6337#0" />
@@ -154,7 +148,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7167000" />
+    <option name="totallyTimeSpent" value="7196000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="812" extended-state="0" />
@@ -165,7 +159,7 @@
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32791328" />
       <window_info anchor="bottom" id="CMake" order="9" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32791328" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32791328" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="10" />
@@ -534,7 +528,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TTTFunctions.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2805">
+        <state relative-caret-position="-585">
           <caret line="187" selection-start-line="187" selection-end-line="187" />
           <folding>
             <element signature="e#5943#6337#0" />
